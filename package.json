@@ -1,0 +1,32 @@
+{
+  "name": "meta-fields",
+  "version": "1.0.12",
+  "description": "Meta-annotations for data structures in JavaScript",
+  "main": "meta-fields.js",
+  "scripts": {
+    "test": "./node_modules/.bin/mocha --reporter spec --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/xpl/meta-fields.git"
+  },
+  "keywords": [
+    "tags",
+    "annotations",
+    "metaprogramming",
+    "metadata",
+    "decorators",
+    "javascript"
+  ],
+  "author": "Vitaly Gordon <rocket.mind@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/xpl/meta-fields/issues"
+  },
+  "homepage": "https://github.com/xpl/meta-fields",
+  "devDependencies": {
+    "babel-preset-es2015": "^6.14.0",
+    "mocha": "^2.4.5",
+    "string.ify": "*"
+  }
+}
