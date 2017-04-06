@@ -10,7 +10,7 @@
 
         const result = {}
 
-        for (let k of Object.getOwnPropertyNames (obj)) {
+        for (let k of O.getOwnPropertyNames (obj)) {
             const v = obj[k]
             if (predicate (k, v)) { result[k] = v }
         }
