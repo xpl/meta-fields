@@ -68,22 +68,9 @@
 
     module.exports = O.assign (Meta, {
 
-        new: x => new Proxy (new Meta (x), {
+        coerce: function (x) { return Meta.is (x) ? x : new Meta ((arguments.length > 0) ? { wrapped: x } : {}) },
 
-            get (target, prop, proxy) {
-
-                if (prop[0] === '$') {
-
-                    throw new Error ('accessing ' + prop + ' — IMPLEMENTATION CHANGED, YOUR CODE IS OBSOLETE')
-                }
-
-                return target[prop]
-            }
-        }),
-
-        coerce: function (x) { return Meta.is (x) ? x : Meta.new ((arguments.length > 0) ? { wrapped: x } : {}) },
-
-        assign: (x, fields) => (Meta.new (Meta.is (x) ? x : { wrapped: x })).assign (fields),
+        assign: (x, fields) => (new Meta (Meta.is (x) ? x : { wrapped: x })).assign (fields),
 
         is: x => (x && (x['__meta__'] !== undefined)) || false,
 
