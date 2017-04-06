@@ -10,7 +10,7 @@
 
         const result = {}
 
-        for (let k of O.getOwnPropertyNames (obj)) {
+        for (let k of Object.getOwnPropertyNames (obj)) {
             const v = obj[k]
             if (predicate (k, v)) { result[k] = v }
         }
@@ -68,9 +68,11 @@
 
     module.exports = O.assign (Meta, {
 
-        coerce: function (x) { return Meta.is (x) ? x : new Meta ((arguments.length > 0) ? { wrapped: x } : {}) },
+        new: x => new Meta (x),
 
-        assign: (x, fields) => (new Meta (Meta.is (x) ? x : { wrapped: x })).assign (fields),
+        coerce: function (x) { return Meta.is (x) ? x : Meta.new ((arguments.length > 0) ? { wrapped: x } : {}) },
+
+        assign: (x, fields) => (Meta.new (Meta.is (x) ? x : { wrapped: x })).assign (fields),
 
         is: x => (x && (x['__meta__'] !== undefined)) || false,
 
