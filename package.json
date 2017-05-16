@@ -4,7 +4,7 @@
   "description": "Meta-annotations for data structures in JavaScript",
   "main": "meta-fields.js",
   "scripts": {
-    "test": "./node_modules/.bin/mocha --reporter spec --watch"
+    "test": "mocha --reporter spec --watch"
   },
   "repository": {
     "type": "git",
