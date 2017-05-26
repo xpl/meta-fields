@@ -1,6 +1,6 @@
 {
   "name": "meta-fields",
-  "version": "1.0.15",
+  "version": "1.0.16",
   "description": "Meta-annotations for data structures in JavaScript",
   "main": "meta-fields.js",
   "scripts": {
